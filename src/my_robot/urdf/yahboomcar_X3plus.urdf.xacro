@@ -76,6 +76,63 @@
     <fixed_joint name="base_joint" parent="base_footprint" child="base_link" xyz="0.0 0.0 0.076" rpy="0 0 0"/>
     <fixed_joint name="base_imu" parent="base_link" child="imu_link" xyz="0.001 0.017 0.0322" rpy="0 3.1415 1.5707"/>
 
+    <!-- Wheels -->
+    <common_link name="front_left_wheel" material="White" path="X3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </common_link>
+    <joint name="${ns}/front_left_wheel_joint" type="continuous">
+        <parent link="${ns}/base_link"/>
+        <child link="${ns}/front_left_wheel"/>
+        <origin xyz="0.0775 0.0875 -0.0325" rpy="-${pi/2} 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <common_link name="front_right_wheel" material="White" path="X3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </common_link>
+    <joint name="${ns}/front_right_wheel_joint" type="continuous">
+        <parent link="${ns}/base_link"/>
+        <child link="${ns}/front_right_wheel"/>
+        <origin xyz="0.0775 -0.0875 -0.0325" rpy="-${pi/2} 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <common_link name="back_left_wheel" material="White" path="X3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </common_link>
+    <joint name="${ns}/back_left_wheel_joint" type="continuous">
+        <parent link="${ns}/base_link"/>
+        <child link="${ns}/back_left_wheel"/>
+        <origin xyz="-0.0775 0.0875 -0.0325" rpy="-${pi/2} 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <common_link name="back_right_wheel" material="White" path="X3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </common_link>
+    <joint name="${ns}/back_right_wheel_joint" type="continuous">
+        <parent link="${ns}/base_link"/>
+        <child link="${ns}/back_right_wheel"/>
+        <origin xyz="-0.0775 -0.0875 -0.0325" rpy="-${pi/2} 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
     <common_link name="laser_link" material="White" path="sensor">
         <inertial>
             <origin xyz="-0.0176558922685589 0.000671805271544437 0.0219302095894866" rpy="0 0 0"/>
