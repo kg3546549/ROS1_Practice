@@ -32,9 +32,17 @@
     <param name="publish_frequency" type="double" value="50.0"/>
   </node>
 
-  <!-- Joint state publisher (for manual control) -->
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="use_gui" value="false"/>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find my_robot)/config/control.yaml" command="load"/>
+
+  <!-- Load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/yahboomcar" args="joint_state_controller arm_position_controller gripper_position_controller"/>
+
+  <!-- Convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+    <remap from="/joint_states" to="/yahboomcar/joint_states" />
   </node>
 
 </launch>
