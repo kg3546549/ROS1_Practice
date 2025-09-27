@@ -32,7 +32,7 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-        output="screen" ns="/yahboomcar" args="joint_state_controller arm_joint1_position_controller arm_joint2_position_controller arm_joint3_position_controller arm_joint4_position_controller arm_joint5_position_controller gripper_position_controller"/>
+        output="screen" ns="/yahboomcar" args="joint_state_controller"/>
 
   <!-- Convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
