@@ -4,39 +4,34 @@ yahboomcar:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
-  # Arm Position Controllers
-  arm_position_controller:
-    type: position_controllers/JointTrajectoryController
-    joints:
-      - arm_joint1
-      - arm_joint2
-      - arm_joint3
-      - arm_joint4
-      - arm_joint5
-    constraints:
-      goal_time: 0.6
-      stopped_velocity_tolerance: 0.05
-      arm_joint1:
-        trajectory: 0.1
-        goal: 0.1
-      arm_joint2:
-        trajectory: 0.1
-        goal: 0.1
-      arm_joint3:
-        trajectory: 0.1
-        goal: 0.1
-      arm_joint4:
-        trajectory: 0.1
-        goal: 0.1
-      arm_joint5:
-        trajectory: 0.1
-        goal: 0.1
-    stop_trajectory_duration: 0.5
-    state_publish_rate: 25
-    action_monitor_rate: 10
+  # Individual Joint Position Controllers for Arm
+  arm_joint1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_joint1
+    pid: {p: 1000.0, i: 0.0, d: 0.1}
+
+  arm_joint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_joint2
+    pid: {p: 1000.0, i: 0.0, d: 0.1}
+
+  arm_joint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_joint3
+    pid: {p: 1000.0, i: 0.0, d: 0.1}
+
+  arm_joint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_joint4
+    pid: {p: 1000.0, i: 0.0, d: 0.1}
+
+  arm_joint5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_joint5
+    pid: {p: 1000.0, i: 0.0, d: 0.1}
 
   # Gripper Position Controller
   gripper_position_controller:
-    type: position_controllers/JointPositionController
+    type: effort_controllers/JointPositionController
     joint: grip_joint
     pid: {p: 1000.0, i: 0.0, d: 0.1}

@@ -319,4 +319,71 @@
     <fixed_joint name="mono_joint" parent="arm_link4" child="mono_link" xyz="-0.0481 -0.05145 -0.0022"
                  rpy="${pi/2} 0 0"/>
 
+    <!-- Transmissions for ros_control -->
+    <transmission name="${ns}/arm_joint1_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${ns}/arm_joint1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${ns}/arm_joint1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="${ns}/arm_joint2_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${ns}/arm_joint2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${ns}/arm_joint2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="${ns}/arm_joint3_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${ns}/arm_joint3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${ns}/arm_joint3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="${ns}/arm_joint4_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${ns}/arm_joint4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${ns}/arm_joint4_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="${ns}/arm_joint5_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${ns}/arm_joint5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${ns}/arm_joint5_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="${ns}/grip_joint_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${ns}/grip_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${ns}/grip_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
 </robot>
