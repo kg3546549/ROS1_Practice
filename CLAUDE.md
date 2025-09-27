@@ -10,6 +10,11 @@
 - Yahboom X3plus 로봇 시뮬레이션
 - Gazebo 환경에서 로봇 제어
 
+## 개발 환경
+- **Windows**: 코드 수정만 (Claude Code 사용)
+- **Ubuntu VMware**: 실제 ROS 실행 및 테스트
+- 주의: Windows에서는 ROS 명령어 실행 불가, 코드 수정만 진행
+
 ## 주요 파일들
 - `src/my_robot/launch/yahboomcar_gazebo.launch` - 메인 launch 파일
 - `src/my_robot/config/control.yaml` - 컨트롤러 설정
