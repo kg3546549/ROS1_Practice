@@ -126,7 +126,7 @@
     <!-- Joint State Publisher Plugin -->
     <gazebo>
         <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
-            <jointName>arm_joint1, arm_joint2, arm_joint3, arm_joint4, arm_joint5, grip_joint</jointName>
+            <jointName>yahboomcar/arm_joint1, yahboomcar/arm_joint2, yahboomcar/arm_joint3, yahboomcar/arm_joint4, yahboomcar/arm_joint5, yahboomcar/grip_joint</jointName>
             <updateRate>50.0</updateRate>
             <alwaysOn>true</alwaysOn>
         </plugin>
@@ -323,8 +323,8 @@
     <gazebo>
         <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
             <robotNamespace>/yahboomcar</robotNamespace>
-            <leftJoint>front_left_wheel_joint</leftJoint>
-            <rightJoint>front_right_wheel_joint</rightJoint>
+            <leftJoint>yahboomcar/front_left_wheel_joint</leftJoint>
+            <rightJoint>yahboomcar/front_right_wheel_joint</rightJoint>
             <wheelSeparation>0.175</wheelSeparation>
             <wheelDiameter>0.065</wheelDiameter>
             <wheelTorque>20</wheelTorque>
@@ -332,13 +332,15 @@
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <odometryFrame>odom</odometryFrame>
-            <robotBaseFrame>base_footprint</robotBaseFrame>
+            <robotBaseFrame>yahboomcar/base_footprint</robotBaseFrame>
             <odometrySource>world</odometrySource>
             <publishWheelTF>true</publishWheelTF>
             <publishOdom>true</publishOdom>
             <publishWheelJointState>true</publishWheelJointState>
             <legacyMode>false</legacyMode>
             <updateRate>50</updateRate>
+            <publishOdomTF>true</publishOdomTF>
+            <rosDebugLevel>na</rosDebugLevel>
         </plugin>
     </gazebo>
 
